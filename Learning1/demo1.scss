@@ -1,0 +1,71 @@
+@import "demo1_1.scss";
+
+$blue: #1875e7;
+div {
+    clear: $blue;
+}
+
+$side: left;
+.rounded{
+    border: 1px solid;
+    border-#{$side}: 5px solid;
+    height: 100px;
+    width: 200px;
+}
+
+$var: 2;
+body{
+    margin: (14px/2);
+    top: 50px+100px;
+    right: $var * 10%;
+}
+
+div{
+    h1{
+        color: red;
+    }
+}
+
+p{
+    border:{
+        color: blue;
+    }
+}
+
+a{
+    &:hover{
+        color: chocolate;
+    }
+}
+
+
+.class1{
+    border: 1px solid #ddd;
+}
+
+.class2{
+    @extend .class1;
+    font-size: 120%;
+}
+
+@mixin left{
+    float: left;
+    margin-left: 10px;
+}
+
+div{
+    @include left;
+    margin: 0 auto;
+}
+
+@mixin right($value: 10px){
+    float: right;
+    margin-right: $value;
+}
+
+#footer{
+    @include right(100px);
+    height: 100px;
+    width: 30px;
+    background-color: lighten(#cc3, 10%);
+}
