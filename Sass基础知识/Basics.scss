@@ -1,0 +1,73 @@
+$font-stack: "Microsoft Yahei";
+$back-color: #eee;
+
+@import '_partials';
+
+nav{
+    ul{
+        list-style: none;
+    }
+    li{
+        display: inline-block;
+    }
+    a{
+        display: block;
+        padding: 6px 12px;
+        text-decoration: none;
+    }
+}
+
+@mixin border-radius($radius) {
+  -webkit-border-radius: $radius;
+     -moz-border-radius: $radius;
+      -ms-border-radius: $radius;
+          border-radius: $radius;
+}
+
+.box { 
+    @include border-radius(10px); 
+    width: 100px;
+    height: 60px;
+    border: 1px solid;
+}
+
+.message {
+    border: 1px solid #ccc;
+    padding: 10px;
+    color: #333;
+}
+
+.success {
+    @extend .message;
+    border-color: green;
+}
+
+.error {
+    @extend .message;
+    border-color: red;
+}
+
+.warning {
+    @extend .message;
+    border-color: yellow;
+}
+
+.container { width: 100%; }
+
+.roleHeight{
+    height: 100px;
+    border: 1px solid;
+    margin-top: 20px;
+}
+
+article[role="main"] {
+    @extend .roleHeight;
+    float: left;
+    width: 600px / 960px * 100%;
+}
+
+aside[role="complementary"] {
+    @extend .roleHeight;
+    float: right;
+    width: 300px / 960px * 100%;
+}
