@@ -1,20 +1,6 @@
 @charset "UTF-8";
 
 /**! 变量 **/
-#main{
-    $width: 5em !global;
-    width: $width;
-}
-
-#sidebar  {
-  width: $width;
-}
-
-$main-width: 4em;
-#main-bard{
-    width: $main_width;
-}
-
 $width: 5em;
 #mian{
     width: $width;
@@ -31,4 +17,10 @@ $width: 5em;
 }
 #selection-list{
     width: $width;
+}
+
+$position: left;
+
+.aside{
+    margin-#{$position}: 30em;
 }
