@@ -1,0 +1,34 @@
+@charset "UTF-8";
+
+/**! 变量 **/
+#main{
+    $width: 5em !global;
+    width: $width;
+}
+
+#sidebar  {
+  width: $width;
+}
+
+$main-width: 4em;
+#main-bard{
+    width: $main_width;
+}
+
+$width: 5em;
+#mian{
+    width: $width;
+}
+
+#sidebar {
+    $height: 4em;
+    height: $height;
+}
+
+#selection{
+    $width: 5em !global; //!global这里$width就定位为全局变量了。
+    width: $width;
+}
+#selection-list{
+    width: $width;
+}
