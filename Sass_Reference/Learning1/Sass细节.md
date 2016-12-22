@@ -1,5 +1,33 @@
 > 用**sass --watch**命令的时候当前目录名不能为中文，否则会报错！
 
+## 导入
+@import 如果导入的文件是css则编译后和正常的css一样，如果sass文件，则后缀可以省略，被导入的scss文件会导入当前scss中。
+``` scss
+//--main.scss
+@import 'header.css';
+@import '_content';
+
+body {
+    background: #eee;
+}
+
+//--_content.scss (以下划线开头的scss文件不会被编译为css文件)
+p {
+    background: #0982c1;
+}
+```
+编译后是是这样的：
+``` css
+@import url(header.css);
+p {
+    background: #0982c1;
+}
+
+body {
+    background: #eee;
+}
+```
+
 ## 变量
 Sass的变量是用$申明的，有局部变量（选择器内部的变量）和全局变量（不在任何选择器内的变量）。例如：
 ``` scss
