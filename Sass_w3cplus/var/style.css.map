@@ -1,6 +1,6 @@
 {
 "version": 3,
-"mappings": "AAyBA,WAAW;EAhBP,MAAM,EAPe,cAAe;EAQpC,OAAO,ECVO,GAAG;;AD6BrB,YAAY;EAfR,aAAa,EAVQ,GAAG;;AA4B5B,QAAQ;EAdJ,kBAAkB,EAAC,sCAAO;EAC1B,eAAe,EAAC,sCAAO;EACvB,UAAU,EAAC,sCAAO",
+"mappings": "AAyBA,WAAW;EAhBP,MAAM,EAPe,cAAe;EAQpC,OAAO,ECTO,GAAG;;AD4BrB,YAAY;EAfR,aAAa,EAVQ,GAAG;;AA4B5B,QAAQ;EAdJ,kBAAkB,EAAC,sCAAO;EAC1B,eAAe,EAAC,sCAAO;EACvB,UAAU,EAAC,sCAAO",
 "sources": ["_imgstyle.scss","style.scss"],
 "names": [],
 "file": "style.css"

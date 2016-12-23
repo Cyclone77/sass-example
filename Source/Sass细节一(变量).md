@@ -52,8 +52,110 @@ body {
     line-height: 2;
 }
 ```
+现在假设我们有个scss文件，代码如下([例子来源](http://www.w3cplus.com/preprocessor/sass-basic-variable.html))：
+``` scss
+//文件_imgstyle.scss的内容：
+// 变量
+//---------------------------------
+$imgStyleBorder:         1px solid #ccc !default;
+$imgStylePadding:        2px !default;
+$imgStyleRadius:         8px !default;
 
-### 变量特殊使用
+// mixin
+//---------------------------------
+@mixin img-border($border:$imgStyleBorder,$padding:$imgStylePadding){
+    border: $border;
+    padding: $padding;
+}
+
+@mixin img-rounded($radius:$imgStyleRadius){
+    border-radius:$radius;  
+}
+
+//样式
+//---------------------------------
+.img-border{
+    @include img-border;
+}
+
+.img-rounded{
+    @include img-rounded;
+}
+
+//文件style.scss内容：
+
+//导入_imgstyle.scss
+@import 'imgstyle';
+```
+以上如果我们要改padding的值为5px，有以下方法：
+
+方法一：重新覆写
+``` scss
+//导入_imgstyle.scss
+@import 'imgstyle';
+
+.img-border{
+    padding:5px;
+}
+```
+解析后的css：
+``` css
+.img-border {
+  border: 1px solid #cccccc;
+  padding: 2px;
+}
+.img-rounded {
+  border-radius: 8px;
+}
+.img-border {
+  padding: 5px;
+}
+```
+方法二：改变@include的参数
+``` scss
+//导入_imgstyle.scss
+@import 'imgstyle';
+
+.img-border{
+    @include img-border($imgStyleBorder,5px);
+}
+```
+解析后：
+``` css
+.img-border {
+  border: 1px solid #cccccc;
+  padding: 2px;
+}
+.img-rounded {
+  border-radius: 8px;
+}
+
+.img-border {
+  border: 1px solid #cccccc;
+  padding: 5px;
+}
+```
+很明显，重复代码过多，在
+
+### 变量特殊使用_imgstyle.scss文件中生命变量用了!default默认值，充分利用它的有点，改写style.scss，如下：
+``` scss
+//申明$imgStylePadding为5px
+$imgStylePadding:  5px;
+
+//导入_imgstyle.scss
+@import 'imgstyle';
+```
+解析后为：
+``` css
+.img-border {
+  border: 1px solid #cccccc;
+  padding: 5px;
+}
+
+.img-rounded {
+  border-radius: 8px;
+}
+```
 
 > **如果变量需要镶嵌在字符串之中，以不带引号的字符串的方式出现，就必须需要写在"#{}"之中。**
 

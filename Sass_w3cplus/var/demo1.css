@@ -1,0 +1,9 @@
+#mian {
+  width: 5em; }
+
+#sidebar {
+  height: 4em; }
+  #sidebar:after {
+    height: 4em; }
+
+/*# sourceMappingURL=demo1.css.map */

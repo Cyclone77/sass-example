@@ -1,0 +1,14 @@
+$width: 5em;
+$height: 3em;
+
+#mian{
+    width: $width;
+}
+
+#sidebar {
+    $height: 4em;
+    height: $height;
+    &:after {
+        height: $height;
+    }
+}
