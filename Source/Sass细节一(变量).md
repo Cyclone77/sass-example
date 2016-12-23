@@ -137,7 +137,7 @@ $imgStyleRadius:         8px !default;
 ```
 很明显，重复代码过多，在
 
-### 变量特殊使用_imgstyle.scss文件中生命变量用了!default默认值，充分利用它的有点，改写style.scss，如下：
+变量特殊使用_imgstyle.scss文件中生命变量用了!default默认值，充分利用它的有点，改写style.scss，如下：
 ``` scss
 //申明$imgStylePadding为5px
 $imgStylePadding:  5px;
