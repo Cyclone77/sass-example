@@ -1,0 +1,13 @@
+.img-border {
+  border: 1px solid #ccc;
+  padding: 5px; }
+
+.img-rounded {
+  border-radius: 8px; }
+
+.img-con {
+  -webkit-box-shadow: inset 0 0 3px rgba(255, 255, 255, 0.3);
+  -moz-box-shadow: inset 0 0 3px rgba(255, 255, 255, 0.3);
+  box-shadow: inset 0 0 3px rgba(255, 255, 255, 0.3); }
+
+/*# sourceMappingURL=style.css.map */

@@ -1,0 +1,35 @@
+// 变量
+//---------------------------------
+$imgStyleBorder:         1px solid #ccc !default;
+$imgStylePadding:        2px !default;
+$imgStyleRadius:         8px !default;
+
+// mixin
+//---------------------------------
+@mixin img-border($border:$imgStyleBorder,$padding:$imgStylePadding){
+    border: $border;
+    padding: $padding;
+}
+
+@mixin img-rounded($radius:$imgStyleRadius){
+    border-radius:$radius;
+}
+
+@mixin box-shadow($shadow...){
+    -webkit-box-shadow:$shadow;
+    -moz-box-shadow:$shadow;
+    box-shadow:$shadow;
+}
+
+//样式
+//---------------------------------
+.img-border{
+    @include img-border;
+}
+
+.img-rounded{
+    @include img-rounded;
+}
+.img-con{
+    @include box-shadow(inset 0 0 3px rgba(255,255,255,0.3));
+}

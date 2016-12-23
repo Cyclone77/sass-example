@@ -1,0 +1,77 @@
+@import 'header';
+@import 'content.css';
+body {
+    background: #eee;
+}
+
+$baseLineHeight: 2;
+$baseLineHeight: 1.5 !default;
+body {
+    line-height: $baseLineHeight;
+}
+
+$height: 2em;
+.page {
+    margin-left: $height;
+}
+
+$height: 3em;
+.select {
+    margin-top: $height;
+}
+
+$position: left;
+$right: 2em;
+$left: 3;
+$marginRight: 3em;
+.aside {
+    margin-#{$position}: 30em;
+    right: $right / $marginRight;
+    top: $right + $marginRight;
+    left: $right * $left;
+}
+
+$linkColor:#08c #333 !default;
+a {
+    color: nth($linkColor, 1);
+    &:hover {
+        color: nth($linkColor, 2);
+    }
+}
+
+$classNav: nav-bar ,nav-list, nav-item;
+
+@each $item in $classNav {
+    .#{$item} {
+        display: inline-block;
+    }
+}
+
+$headings: (h1: 2em 3em, h2: 1.5em 2em, h3: 1.2em 1.5em);
+@each $header,$size in $headings {
+    #{$header} {
+        font-size: nth($size, 1);
+        height: nth($size, 2);
+    }
+}
+
+$color:red;
+p{
+    $color:blue;
+    color:$color;//blue
+    &>a{
+        color: $color;
+    }
+}
+a{
+    color:$color;//red
+}
+
+p{
+    $color:blue;
+    color:$color;//blue
+
+    a{
+        color:$color;//blue
+    }   
+}
