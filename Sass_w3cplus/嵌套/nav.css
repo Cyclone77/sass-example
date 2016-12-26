@@ -1,0 +1,57 @@
+@charset "UTF-8";
+/* !CSS3支持样式
+@mixin skewX($deg) {
+    -webkit-transform: skewX($deg);
+    -moz-transform: skewX($deg);
+    -o-transform: skewX($deg);
+    -ms-transform: skewX($deg);
+    transform: skewX($deg);
+}
+*/
+/* 来源于 https://github.com/twbs/bootstrap-sass/blob/master/assets/stylesheets/bootstrap/_mixins.scss bootstrap的做法 */
+/*! 测试 */
+nav {
+  display: block; }
+  nav ul {
+    margin: 50px auto;
+    width: 800px;
+    width: -moz-fit-content;
+    width: -webkit-fit-content;
+    width: -o-fit-content;
+    width: fit-content;
+    padding: 0;
+    list-style: none; }
+    nav ul:before, nav ul:after {
+      content: "";
+      display: table; }
+    nav ul:after {
+      clear: both;
+      overflow: hidden; }
+    nav ul li {
+      background: #34495e;
+      float: left;
+      -webkit-transform: skewX(-25deg);
+      -moz-transform: skewX(-25deg);
+      -o-transform: skewX(-25deg);
+      -ms-transform: skewX(-25deg);
+      transform: skewX(-25deg);
+      -webkit-backface-visibility: hidden; }
+      nav ul li a {
+        display: block;
+        color: #fff;
+        text-transform: uppercase;
+        text-decoration: none;
+        font-family: Arial, Helvetica;
+        font-size: 14px;
+        -webkit-transform: skewX(25deg);
+        -moz-transform: skewX(25deg);
+        -o-transform: skewX(25deg);
+        -ms-transform: skewX(25deg);
+        transform: skewX(25deg);
+        -webkit-backface-visibility: hidden;
+        padding: 1em 2em;
+        outline: none; }
+      nav ul li:hover {
+        background: #e74c3c; }
+
+/*# sourceMappingURL=nav.css.map */

@@ -1,0 +1,93 @@
+@charset "UTF-8";
+/* !CSS3支持样式
+@mixin skewX($deg) {
+    -webkit-transform: skewX($deg);
+    -moz-transform: skewX($deg);
+    -o-transform: skewX($deg);
+    -ms-transform: skewX($deg);
+    transform: skewX($deg);
+}
+*/
+//Example: @include prefixer(border-radius, $radius, webkit spec);
+//----------------------------------------
+/* 来源于 https://github.com/twbs/bootstrap-sass/blob/master/assets/stylesheets/bootstrap/_mixins.scss bootstrap的做法 */
+$prefix-for-webkit: true !default;
+$prefix-for-mozilla: true !default;
+$prefix-for-microsoft: true !default;
+$prefix-for-opera: true !default;
+$prefix-for-spec: true !default; // required for keyframe mixin
+//prefixer
+@mixin prefixer ($property, $value, $prefixes) {
+    @each $prefix in $prefixes {
+        @if $prefix==webkit and $prefix-for-webkit==true {
+            -webkit-#{$property}: $value;
+        }
+        @else if $prefix==moz and $prefix-for-mozilla==true {
+            -moz-#{$property}: $value;
+        }
+        @else if $prefix==ms and $prefix-for-microsoft==true {
+            -ms-#{$property}: $value;
+        }
+        @else if $prefix==o and $prefix-for-opera==true {
+            -o-#{$property}: $value;
+        }
+        @else if $prefix==spec and $prefix-for-spec==true {
+            #{$property}: $value;
+        }
+        @else {
+            @warn "Unrecognized prefix: #{$prefix}";
+        }
+    }
+}
+
+@mixin skewX($degrees) {
+    @include prefixer(transform, skewX($degrees), webkit moz o ms spec);
+    -webkit-backface-visibility: hidden;
+}
+
+/*! 测试 */
+nav {
+    display: block;
+    ul {
+        margin: 50px auto;
+        width: 800px;
+        width: -moz-fit-content;
+        width: -webkit-fit-content;
+        width: -o-fit-content;
+        width: fit-content;
+        padding: 0;
+        list-style: none;
+        &:before,
+        &:after {
+            content: "";
+            display: table;
+        }
+        &:after {
+            clear: both;
+            overflow: hidden;
+        }
+        li {
+            background: #34495e;
+            float: left;
+            @include skewX(-25deg);
+            a {
+                display: block;
+                color: #fff;
+                text: {
+                    transform: uppercase;
+                    decoration: none;
+                }
+                font: {
+                    family: Arial, Helvetica;
+                    size: 14px;
+                }
+                @include skewX(25deg);
+                padding: 1em 2em;
+                outline: none;
+            }
+            &:hover {
+                background: #e74c3c;
+            }
+        }
+    }
+}
