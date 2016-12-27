@@ -54,4 +54,30 @@ nav {
       nav ul li:hover {
         background: #e74c3c; }
 
+button {
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
+  -o-border-radius: 5px;
+  -ms-border-radius: 5px;
+  border-radius: 5px;
+  background: #ccc;
+  color: #222; }
+
+.simple-form input {
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
+  -o-border-radius: 5px;
+  -ms-border-radius: 5px;
+  border-radius: 5px; }
+
+.main-nav .item {
+  color: #fff; }
+  .main-nav .item a:hover,
+  .main-nav .item a:active {
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    -o-border-radius: 5px;
+    -ms-border-radius: 5px;
+    border-radius: 5px; }
+
 /*# sourceMappingURL=nav.css.map */

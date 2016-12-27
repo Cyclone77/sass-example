@@ -1,4 +1,5 @@
 @charset "UTF-8";
+
 /* !CSS3支持样式
 @mixin skewX($deg) {
     -webkit-transform: skewX($deg);
@@ -8,9 +9,12 @@
     transform: skewX($deg);
 }
 */
+
 //Example: @include prefixer(border-radius, $radius, webkit spec);
 //----------------------------------------
+
 /* 来源于 https://github.com/twbs/bootstrap-sass/blob/master/assets/stylesheets/bootstrap/_mixins.scss bootstrap的做法 */
+
 $prefix-for-webkit: true !default;
 $prefix-for-mozilla: true !default;
 $prefix-for-microsoft: true !default;
@@ -45,7 +49,9 @@ $prefix-for-spec: true !default; // required for keyframe mixin
     -webkit-backface-visibility: hidden;
 }
 
+
 /*! 测试 */
+
 nav {
     display: block;
     ul {
@@ -89,5 +95,33 @@ nav {
                 background: #e74c3c;
             }
         }
+    }
+}
+
+//define @mixin rounded 
+@mixin rouded($radius) {
+    -webkit-border-radius: $radius;
+    -moz-border-radius: $radius;
+    -o-border-radius: $radius;
+    -ms-border-radius: $radius;
+    border-radius: $radius;
+}
+
+button {
+    @include rouded(5px);
+    background: #ccc;
+    color: #222;
+}
+
+//Several lines down, in the same file, or even in another different file
+.simple-form input {
+    @include rouded(5px);
+}
+
+.main-nav .item {
+    color: #fff;
+    a:hover,
+    a:active {
+        @include rouded(5px);
     }
 }

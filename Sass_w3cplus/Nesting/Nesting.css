@@ -1,0 +1,36 @@
+nav {
+  line-height: 40px;
+  text-transform: capitalize;
+  background-color: #333; }
+  nav li {
+    float: left; }
+  nav a {
+    display: block;
+    padding: 0 10px;
+    color: #fff; }
+    nav a:hover {
+      color: #ddd; }
+
+.fakeshadow {
+  border-style: solid;
+  border-left-width: 4px;
+  border-left-color: #888;
+  border-right-width: 2px;
+  border-right-color: #ccc; }
+
+.parent-1 {
+  color: #f00; }
+  .parent-1 .child {
+    width: 100px; }
+
+.parent-2 {
+  color: #f00; }
+  .child {
+    width: 200px; }
+
+.child {
+  width: 10px; }
+  .parent .child {
+    color: #f00; }
+
+/*# sourceMappingURL=Nesting.css.map */

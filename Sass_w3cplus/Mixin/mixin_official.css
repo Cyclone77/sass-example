@@ -1,0 +1,26 @@
+.page-title {
+  font-size: 14px;
+  font-family: Arial;
+  font-weight: bold;
+  padding: 4px;
+  margin-top: 10px; }
+  .page-title:after {
+    display: block;
+    clear: both;
+    content: ""; }
+
+a {
+  color: blue;
+  background-color: red; }
+
+.primary {
+  color: #ff0000;
+  background-color: #00ff00;
+  border-color: #0000ff; }
+
+.secondary {
+  color: #00ff00;
+  background-color: #0000ff;
+  border-color: #ff0000; }
+
+/*# sourceMappingURL=mixin_official.css.map */

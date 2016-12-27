@@ -1,0 +1,62 @@
+@charset "UTF-8";
+@mixin large-text {
+    font: {
+        size: 14px;
+        family: Arial;
+        weight: bold;
+    }
+}
+
+@mixin clearBlock {
+    &:after {
+        display: block;
+        clear: both;
+        content: "";
+    }
+}
+
+@mixin clearfix {
+    display: inline-block;
+    &:after {
+        content: ".";
+        display: block;
+        height: 0;
+        clear: both;
+        visibility: hidden;
+    }
+    html>& {
+        height: 1px
+    }
+}
+
+.page-title {
+    @include large-text();
+    padding: 4px;
+    margin-top: 10px;
+    @include clearBlock();
+}
+
+@mixin silly-links {
+    a {
+        color: blue;
+        background-color: red;
+    }
+}
+
+@include silly-links;
+
+@mixin colors($text, $background, $border) {
+      color: $text;
+      background-color: $background;
+      border-color: $border;
+}
+
+$values: #ff0000, #00ff00, #0000ff;
+    .primary {
+      @include colors($values...);
+}
+
+$value-map: (text: #00ff00, background: #0000ff, border: #ff0000);
+    .secondary {
+      @include colors($value-map...);
+}
