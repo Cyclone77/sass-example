@@ -1,0 +1,17 @@
+%ir {
+    color: transparent;
+    text-shadow: none;
+    background-color: transparent;
+    border: 0;
+}
+
+#header {
+    h2 {
+        @extend %ir;
+        width: 300px;
+    }
+}
+
+.ir {
+    @extend %ir;
+}

@@ -1,0 +1,18 @@
+//函数
+$baseFontSize: 10px !default;
+$gray: #ccc !default;
+@function -cy-pxToRem($px) {
+    @return $px / $baseFontSize * 1rem;
+}
+
+body {
+    font: {
+        size: $baseFontSize;
+    }
+    color: lighten($gray, 10%);
+}
+
+.test {
+    font-size: -cy-pxToRem(16px);
+    color: darken($gray, 10%);
+}
