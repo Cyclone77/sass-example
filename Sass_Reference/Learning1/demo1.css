@@ -1,18 +1,10 @@
-@charset "UTF-8";
-/**! 变量 **/
-#mian {
-  width: 5em; }
+body {
+  font-size: 62.5%; }
 
-#sidebar {
-  height: 4em; }
-
-#selection {
-  width: 5em; }
-
-#selection-list {
-  width: 5em; }
-
-.aside {
-  margin-left: 30em; }
+.content p {
+  height: 80px;
+  width: 5em;
+  font-size: 20px;
+  background-color: #ccc; }
 
 /*# sourceMappingURL=demo1.css.map */

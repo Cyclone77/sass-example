@@ -1,26 +1,13 @@
 @charset "UTF-8";
-
-/**! 变量 **/
-$width: 5em;
-#mian{
-    width: $width;
+body{
+    font-size: 100%;
 }
 
-#sidebar {
-    $height: 4em;
-    height: $height;
-}
-
-#selection{
-    $width: 5em !global; //!global这里$width就定位为全局变量了。
-    width: $width;
-}
-#selection-list{
-    width: $width;
-}
-
-$position: left;
-
-.aside{
-    margin-#{$position}: 30em;
+.content {
+    p {
+        height: 80px;
+        width: 5em;
+        font-size: 20px;
+        background-color: #ccc;
+    }
 }
