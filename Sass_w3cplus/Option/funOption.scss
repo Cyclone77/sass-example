@@ -1,0 +1,35 @@
+@charset "UTF-8";
+/*
+    字符串函数
+
+    unquote($string)：删除字符串中的引号；
+    quote($string)：给字符串添加引号。
+*/
+
+.testUnquote {
+    content: unquote("hello world!");
+}
+
+.estQuote {
+    content: quote('hello world!');
+}
+
+/*
+    数字函数
+
+    percentage($value)：将一个不带单位的数转换成百分比值；
+    round($value)：将数值四舍五入，转换成一个最接近的整数；
+    ceil($value)：将大于自己的小数转换成下一位整数；
+    floor($value)：将一个数去除他的小数部分；
+    abs($value)：返回一个数的绝对值；
+    min($numbers…)：找出几个数值之间的最小值；
+    max($numbers…)：找出几个数值之间的最大值。
+*/
+
+.textPercentage{
+    height: percentage(0.2);
+}
+
+.testround{
+    height: round(5.6px);
+}
