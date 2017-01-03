@@ -1,4 +1,5 @@
 @charset "UTF-8";
+
 /*
     字符串函数
 
@@ -6,13 +7,11 @@
     quote($string)：给字符串添加引号。
 */
 
-.testUnquote {
+.testquote {
     content: unquote("hello world!");
-}
-
-.estQuote {
     content: quote('hello world!');
 }
+
 
 /*
     数字函数
@@ -26,10 +25,72 @@
     max($numbers…)：找出几个数值之间的最大值。
 */
 
-.textPercentage{
+.textnumfun {
     height: percentage(0.2);
+    width: round(5.6px);
+    margin-left: ceil(5.4px);
+    margin-right: floor(6.321px);
+    top: abs(-6px);
+    right: min(10px, 8px, 6px);
+    border: max(2px, 3px, 6px);
 }
 
-.testround{
-    height: round(5.6px);
+/*
+    列表函数
+
+    length($list)：返回一个列表的长度值；
+    nth($list, $n)：返回一个列表中指定的某个标签值
+    join($list1, $list2, [$separator])：将两个列给连接在一起，变成一个列表；
+    append($list1, $val, [$separator])：将某个值放在列表的最后；
+    zip($lists…)：将几个列表结合成一个多维的列表；
+    index($list, $value)：返回一个值在列表中的位置值。
+*/
+
+$list: red, blue, yellow;
+.testlength{
+    width: length($list) + px;
+    color: nth($list, 1);
+    content: join(hello , world, comma);
+    margin: append((10px 20px 30px) , 40px);
+    box-shadow: zip(1px 2px 3px,solid dashed dotted,green blue red);
+    z-index: index($list,red);
+}
+
+/*
+    Introspection函数
+
+    type-of($value)：返回一个值的类型
+    unit($number)：返回一个值的单位；
+    unitless($number)：判断一个值是否带有带位
+    comparable($number-1, $number-2)：判断两个值是否可以做加、减和合并
+*/
+
+.testIntrospection{
+    content: quote(type-of(100));
+    content: quote(unit(10px));
+    content: unitless(10px);
+    content: comparable(1px, 2);
+}
+
+/*
+    Miscellaneous函数
+*/
+
+.textMiscellaneous{
+    width:  if(true, 1px, 2px);
+}
+
+/*
+    自定义函数
+*/
+
+//去掉一个值的单位，如12px => 12
+// eg. strip-units(12px) => 12
+
+@function strip-units($number){
+    @return $number / ($number * 0 + 1);
+}
+
+.testfunction{
+    z-index: strip-units(10px);
 }
