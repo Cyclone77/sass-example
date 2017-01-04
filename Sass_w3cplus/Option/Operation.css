@@ -1,0 +1,9 @@
+.ib {
+  display: inline-block;
+  *display: inline;
+  *zoom: 1; }
+
+p {
+  color: red; }
+
+/*# sourceMappingURL=Operation.css.map */

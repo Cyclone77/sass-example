@@ -1,0 +1,18 @@
+$lte7: true;
+$type: monster;
+.ib {
+    display: inline-block;
+    @if $lte7 {
+        *display: inline;
+        *zoom: 1;
+    }
+}
+
+p {
+    @if $type==ocean {
+        color: blue;
+    }
+    @else {
+        color: red;
+    }
+}
