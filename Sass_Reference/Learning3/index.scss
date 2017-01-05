@@ -83,11 +83,6 @@ $smallArr: (0, 3, 7, 11);
             }
         }
     }
-    @media screen and (min-width: $width-medium) {
-        @at-root h1 {
-            font-size: 3.5em;
-        }
-    }
     @media screen and (min-width: $width-small) {
         @each $item in $smallArr {
             .panel-#{$item} {
@@ -96,6 +91,11 @@ $smallArr: (0, 3, 7, 11);
         }
         @at-root h1 {
             font-size: 3em;
+        }
+    }
+    @media screen and (min-width: $width-medium) {
+        @at-root h1 {
+            font-size: 3.5em;
         }
     }
 }

@@ -58,9 +58,6 @@ a {
   .section .panel-11 {
     box-shadow: none;
     font-size: 0.75em; }
-  @media screen and (min-width: 600px) {
-    h1 {
-      font-size: 3.5em; } }
   @media screen and (min-width: 400px) {
     .section .panel-0 {
       text-align: center; }
@@ -72,5 +69,8 @@ a {
       text-align: center; }
     h1 {
       font-size: 3em; } }
+  @media screen and (min-width: 600px) {
+    h1 {
+      font-size: 3.5em; } }
 
 /*# sourceMappingURL=index.css.map */
