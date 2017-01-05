@@ -1,0 +1,133 @@
+@charset "UTF-8";
+
+/*
+//css的写法
+section.main{
+    float: left;
+    width: 65%;
+    height: 300px;
+    font-size: 16px;
+    line-height: 1.4;
+    border: 1px solid;
+}
+
+@media screen and (max-width: 800px){
+    section.main{
+        float: none;
+        width: auto;
+    }
+}
+*/
+
+
+/*
+//sass嵌套写法
+section.main{
+    float: left;
+    width: 65%;
+    height: 300px;
+    font-size: 16px;
+    line-height: 1.4;
+    border: 1px solid;
+    @media screen and (max-width: 800px){
+        float: none;
+        width: auto;
+    }
+    @media screen and (max-width: 500px){
+        border: 5px solid #A12;
+    }
+}
+*/
+
+$width-small: 400px;
+$width-medium: 760px;
+$width-large: 1200px;
+section.main {
+    float: left;
+    width: 65%;
+    height: 300px;
+    font-size: 16px;
+    line-height: 1.4;
+    border: 1px solid;
+    //这里一般从大往下写，小的继承大的没有的属性
+    @media screen and (max-width: $width-large) {
+        &:after {
+            content: "最大宽度为#{$width-large};";
+        }
+    }
+    @media screen and (max-width: $width-medium) {
+        float: none;
+        width: auto;
+        &:after {
+            content: "最大宽度为#{$width-medium};";
+        }
+    }
+    @media screen and (max-width: $width-small) {
+        border: 5px solid #A12;
+        &:after {
+            content: "最大宽度为#{$width-small}";
+        }
+    }
+}
+
+//用一个变量定义整个媒体查询（不只用数值）,媒体查询的条件改动也很频繁。
+$mobile-first: "screen and (min-width: 300px)";
+@media #{$mobile-first} {
+    #content {
+        font-size: 14px;
+        line-height: 1.5;
+    }
+}
+
+@mixin responsive($width) {
+    @if ($width=="large") {
+        @media screen and (max-width: $width-large) {
+            @content;
+        }
+    }
+    @else if ($width=="medium") {
+        @media screen and (max-width: $width-medium) {
+            @content;
+        }
+    }
+    @else if ($width=="small") {
+        @media screen and (max-width: $width-small) {
+            @content;
+        }
+    }
+}
+
+#content {
+    float: left;
+    width: 70%;
+    height: 300px;
+    border: 1px solid;
+    @include responsive("large") {
+        width: 80%;
+        &:after {
+            content: "最大宽度为#{$width-large}";
+        }
+    }
+    @include responsive("medium") {
+        width: 50%;
+        font-size: 14px;
+        &:after {
+            content: "最大宽度为#{$width-medium}";
+        }
+    }
+    @include responsive("small") {
+        float: none;
+        width: 100%;
+        font-size: 12px;
+        &:after {
+            content: "最大宽度为#{$width-small}";
+        }
+    }
+}
+
+h1 {
+    font-size: 40px;
+    @include responsive(large) { font-size: 48px; }
+    @include responsive(medium) { font-size: 32px; }
+    @include responsive(small){ font-size: 20px; }
+}

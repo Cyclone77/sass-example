@@ -1,6 +1,6 @@
 /*
 Error: Invalid GBK character "\xE5"
-        on line 2 of Sass_Reference/Learning2/demo1.scss
+        on line 2 of sass-example/Sass_Reference/Learning2/demo1.scss
 
 1: p {
 2:     font: 10px/8px; // 原生的CSS，不作为除法
@@ -11,7 +11,7 @@ Error: Invalid GBK character "\xE5"
 7:     margin-left: 5px + 8px/2px; // 使用了 +, 作为除法
 
 Backtrace:
-Sass_Reference/Learning2/demo1.scss:2
+sass-example/Sass_Reference/Learning2/demo1.scss:2
 D:/Ruby23-x64/lib/ruby/gems/2.3.0/gems/sass-3.4.23/lib/sass/util.rb:1300:in `rescue in block in find_encoding_error'
 D:/Ruby23-x64/lib/ruby/gems/2.3.0/gems/sass-3.4.23/lib/sass/util.rb:1297:in `block in find_encoding_error'
 D:/Ruby23-x64/lib/ruby/gems/2.3.0/gems/sass-3.4.23/lib/sass/util.rb:1296:in `each'
@@ -36,4 +36,4 @@ D:/Ruby23-x64/lib/ruby/gems/2.3.0/gems/sass-3.4.23/vendor/listen/lib/listen/adap
 body:before {
   white-space: pre;
   font-family: monospace;
-  content: "Error: Invalid GBK character \"\xE5\"\A         on line 2 of Sass_Reference/Learning2/demo1.scss\A \A 1: p {\A 2:     font: 10px/8px; // 原生的CSS，不作为除法\A 3:     $width: 1000px;\A 4:     width: $width/2; // 使用了变量, 作为除法\A 5:     width: round(1.5)/2; // 使用了函数, 作为除法\A 6:     height: (500px/2); // 使用了括号, 作为除法\A 7:     margin-left: 5px + 8px/2px; // 使用了 +, 作为除法"; }
+  content: "Error: Invalid GBK character \"\xE5\"\A         on line 2 of sass-example/Sass_Reference/Learning2/demo1.scss\A \A 1: p {\A 2:     font: 10px/8px; // 原生的CSS，不作为除法\A 3:     $width: 1000px;\A 4:     width: $width/2; // 使用了变量, 作为除法\A 5:     width: round(1.5)/2; // 使用了函数, 作为除法\A 6:     height: (500px/2); // 使用了括号, 作为除法\A 7:     margin-left: 5px + 8px/2px; // 使用了 +, 作为除法"; }

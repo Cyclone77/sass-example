@@ -1,0 +1,100 @@
+@charset "UTF-8";
+/*
+//css的写法
+section.main{
+    float: left;
+    width: 65%;
+    height: 300px;
+    font-size: 16px;
+    line-height: 1.4;
+    border: 1px solid;
+}
+
+@media screen and (max-width: 800px){
+    section.main{
+        float: none;
+        width: auto;
+    }
+}
+*/
+/*
+//sass嵌套写法
+section.main{
+    float: left;
+    width: 65%;
+    height: 300px;
+    font-size: 16px;
+    line-height: 1.4;
+    border: 1px solid;
+    @media screen and (max-width: 800px){
+        float: none;
+        width: auto;
+    }
+    @media screen and (max-width: 500px){
+        border: 5px solid #A12;
+    }
+}
+*/
+section.main {
+  float: left;
+  width: 65%;
+  height: 300px;
+  font-size: 16px;
+  line-height: 1.4;
+  border: 1px solid; }
+  @media screen and (max-width: 1200px) {
+    section.main:after {
+      content: "最大宽度为1200px;"; } }
+  @media screen and (max-width: 760px) {
+    section.main {
+      float: none;
+      width: auto; }
+      section.main:after {
+        content: "最大宽度为760px;"; } }
+  @media screen and (max-width: 400px) {
+    section.main {
+      border: 5px solid #A12; }
+      section.main:after {
+        content: "最大宽度为400px"; } }
+
+@media screen and (min-width: 300px) {
+  #content {
+    font-size: 14px;
+    line-height: 1.5; } }
+#content {
+  float: left;
+  width: 70%;
+  height: 300px;
+  border: 1px solid; }
+  @media screen and (max-width: 1200px) {
+    #content {
+      width: 80%; }
+      #content:after {
+        content: "最大宽度为1200px"; } }
+  @media screen and (max-width: 760px) {
+    #content {
+      width: 50%;
+      font-size: 14px; }
+      #content:after {
+        content: "最大宽度为760px"; } }
+  @media screen and (max-width: 400px) {
+    #content {
+      float: none;
+      width: 100%;
+      font-size: 12px; }
+      #content:after {
+        content: "最大宽度为400px"; } }
+
+h1 {
+  font-size: 40px; }
+  @media screen and (max-width: 1200px) {
+    h1 {
+      font-size: 48px; } }
+  @media screen and (max-width: 760px) {
+    h1 {
+      font-size: 32px; } }
+  @media screen and (max-width: 400px) {
+    h1 {
+      font-size: 20px; } }
+
+/*# sourceMappingURL=media.css.map */
