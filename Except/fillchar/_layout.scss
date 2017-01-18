@@ -1,0 +1,19 @@
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    width: 100%;
+    @at-root body {
+        width: 100%;
+        font-size: 100%;
+    }
+}
+
+#main{
+    max-width: compu-em(1260);
+    margin: compu-em(50) auto 0;
+}
