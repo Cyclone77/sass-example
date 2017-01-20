@@ -1,5 +1,4 @@
-@charset "UTF-8";
-//无参数@mixin指令
+@charset "UTF-8"; //无参数@mixin指令
 @mixin center-block {
     display: block;
     margin: 0 auto;
@@ -8,7 +7,6 @@
 .demo {
     @include center-block;
 }
-
 //带参数的@mixin指令
 @mixin opacity($opacity: 50) {
     opacity: $opacity / 100;
@@ -22,7 +20,6 @@
 .opacity-80 {
     @include opacity(80); //传递参数
 }
-
 //如@include传入参数的个数小于@mixin定义参数的个数，则按照顺序表示，后面不足的使用默认值
 //如不足的没有默认值则报错。除此之外还可以选择性的传入参数，使用参数名与值同时传入
 @mixin horizontal-line($border: 1px solid #ccc, $padding:10px) {
@@ -38,7 +35,6 @@
 .imgtext-h--product li {
     @include horizontal-line($padding: 15px);
 }
-
 //如果一个参数可以有多组值，如box-shadow、transition等，那么参数则需要在变量后加三个点表示，如$variables...。
 @mixin box-shadow($shadow...) {
     -webkit-box-shadow: $shadow;
@@ -50,26 +46,22 @@
     width: 100px;
     height: 100px;
 }
-
 //同样的传递（可变）参数的时候也可以用...来代替
 @mixin colors($text, $background, $border) {
     color: $text;
     background-color: $background;
     border-color: $border;
 }
+$values: #ff0000, #00ff00, #0000ff;
 
-$values: #ff0000,
-#00ff00,
-#0000ff;
 .primary {
     @include colors($values...);
 }
-
 $value-map: (text: #00ff00, background: #0000ff, border: #ff0000);
+
 .secondary {
     @include colors($value-map...);
 }
-
 //@extend 来选择要继承的样式
 h1 {
     border: 4px solid #ff9aa9;
@@ -79,7 +71,6 @@ h1 {
     @extend h1;
     border-width: 2px;
 }
-
 //%占位符,如果用这种占位符，不会生成多余的css样式
 %ir {
     color: transparent;
@@ -98,4 +89,3 @@ h1 {
 .ir {
     @extend %ir;
 }
-
