@@ -1,0 +1,35 @@
+@charset "UTF-8";
+
+#header {
+    $height: 30px !global;
+    height: $height;
+}
+$main-width: 50px;
+
+#main {
+    height: $height;
+    width: $main_width;
+    line-height: nth(10px 20px 30px, 1);
+}
+@mixin firefox-message($selector) {
+    body.firefox #{$selector}:before {
+        content: "Hi, Firefox users!";
+    }
+}
+@include firefox-message(".header");
+$color: red;
+
+p {
+    $color: blue;
+    color: $color; //blue
+}
+
+a {
+    color: $color; //red
+}
+$color1: red !default;
+$color1: blue !default;
+
+p {
+    color: $color1;
+}

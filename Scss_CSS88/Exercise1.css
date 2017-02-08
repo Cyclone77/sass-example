@@ -1,0 +1,21 @@
+#header {
+  height: 30px; }
+
+#main {
+  height: 30px;
+  width: 50px;
+  line-height: 10px; }
+
+body.firefox .header:before {
+  content: "Hi, Firefox users!"; }
+
+p {
+  color: blue; }
+
+a {
+  color: red; }
+
+p {
+  color: red; }
+
+/*# sourceMappingURL=Exercise1.css.map */
