@@ -1,0 +1,52 @@
+#header {
+  width: 100px;
+  margin-left: auto;
+  margin-right: auto; }
+
+.gallery {
+  width: 600px;
+  margin-left: auto;
+  margin-right: auto; }
+
+.inlin_eblock {
+  display: inline-block;
+  *display: inline;
+  *zoom: 1; }
+
+.f1 {
+  float: left;
+  display: inline; }
+
+.f2 {
+  float: right;
+  display: inline; }
+
+.disable {
+  background-color: #e6e6e6 !important;
+  color: #ababab !important;
+  cursor: not-allowed; }
+
+.shadow {
+  -webkit-box-shadow: 0 0 5px rgba(0, 0, 0, 0.3);
+  -moz-box-shadow: 0 0 5px rgba(0, 0, 0, 0.3);
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.3); }
+
+.shadow {
+  -webkit-box-shadow: 0 0 5px rgba(0, 0, 0, 0.3), inset 0 0 3px rgba(255, 255, 255, 0.5);
+  -moz-box-shadow: 0 0 5px rgba(0, 0, 0, 0.3), inset 0 0 3px rgba(255, 255, 255, 0.5);
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.3), inset 0 0 3px rgba(255, 255, 255, 0.5); }
+
+#header {
+  width: 1000px;
+  height: 200px; }
+  #header .logo {
+    width: 200px; }
+
+@media screen and (min-width: 960px) and (max-width: 1200px) {
+  body {
+    font-size: 14px; } }
+@media screen and (min-width: 780px) and (max-width: 1000px) {
+  #header {
+    color: red; } }
+
+/*# sourceMappingURL=style.css.map */

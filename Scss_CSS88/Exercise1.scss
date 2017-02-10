@@ -33,3 +33,23 @@ $color1: blue !default;
 p {
     color: $color1;
 }
+
+p {
+    font: (10px/8px);
+    // 原生的CSS，不作为除法
+    $width: 1000px;
+    width: $width/2;
+    // 使用了变量, 作为除法
+    width: round(1.5)/2;
+    // 使用了函数, 作为除法
+    height: (500px/2);
+    // 使用了括号, 作为除法
+    margin-left: 5px + 8px/2px; // 使用了 +, 作为除法
+    font: italic bold (10px/8); // 在一个列表（list）中，括号可以被忽略。
+    left: 10px - 8;
+    right: -9px;
+    margin: 1px -2px;
+    color: #777 + #777;
+    background: #010203 * 2;
+    margin: (3px / 4) auto;
+}

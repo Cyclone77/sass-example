@@ -5,3 +5,13 @@ $(function() {
         str = '';
     console.log(pattern.test(str));
 })
+
+var i = 0,intervalID = setInterval(function() {
+    if (i < 10) {
+        console.log(i);
+        i++;
+    }
+    if (i>5) clearInterval(intervalID);
+}, 1000);
+
+console.log(intervalID);

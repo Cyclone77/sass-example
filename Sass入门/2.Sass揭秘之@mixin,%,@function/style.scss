@@ -1,0 +1,64 @@
+@charset "UTF-8";
+//$lte7: false; 这里可以设置开关
+@import "mixin";
+
+//@mixin无参数调用
+#header {
+    width: 100px;
+    @include center-block;
+}
+.gallery {
+    width: 600px;
+    @include center-block;
+}
+
+//带条件的@mixin
+.inlin_eblock {
+    @include inline-block;
+}
+
+//@mixin带参数，默认调用
+.f1 {
+    @include float;
+}
+
+.f2 {
+    @include float(right);
+}
+
+//@mixin多参数调用
+.disable {
+    @include disable($bgColor:#e6e6e6, $textColor:#ababab);
+}
+
+//@mixin多属性调用
+.shadow {
+    @include box-shadow(0 0 5px rgba(0,0,0,.3));
+}
+
+.shadow {
+    @include box-shadow(0 0 5px rgba(0,0,0,.3), inset 0 0 3px rgba(255,255,255,.5));
+}
+
+//@content 嵌套调用
+@include header {
+    width: 1000px;
+    height: 200px;
+
+    .logo {
+        width: 200px;
+    }
+}
+
+//@content 用途
+@include screen(960px,1200px){
+    body{
+        font-size: 14px;
+    }
+};
+//不建议使用
+#header{
+    @include screen(780px, 1000px){
+        color: red;
+    }
+}

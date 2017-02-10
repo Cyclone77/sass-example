@@ -1,0 +1,54 @@
+@charset "UTF-8";
+$lte7: true !default; //是否兼容IE7
+//简单版不带参数的@mixin
+@mixin center-block {
+    margin-left: auto;
+    margin-right: auto;
+}
+
+//带条件的@mixin
+//inline-block
+//ie6-7*display: inline;*zoom:1;
+@mixin inline-block {
+    display: inline-block;
+    @if $lte7 {
+        *display: inline;
+        *zoom: 1;
+    }
+}
+
+//带参数的@mixin
+@mixin float($float: left) {
+    float: $float;
+    @if $lte7 {
+        display: inline;
+    }
+}
+
+//多个参数的@mixin
+@mixin disable($bgColor: #6e6e6e, $textColor: #ababab) {
+    background-color: $bgColor !important;
+    color: $textColor !important;
+    cursor: not-allowed;
+}
+
+//多属性值的@mixin
+@mixin box-shadow($shadow...) {
+    -webkit-box-shadow: $shadow;
+    -moz-box-shadow: $shadow;
+    box-shadow: $shadow;
+}
+
+//@content 嵌套调用
+@mixin header {
+    #header {
+        @content;
+    }
+}
+
+//@content 主要用途
+@mixin screen($res-min, $res-max) {
+    @media screen and (min-width: $res-min) and (max-width: $res-max) {
+        @content;
+    }
+}
