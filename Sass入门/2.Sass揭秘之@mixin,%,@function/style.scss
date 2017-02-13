@@ -1,23 +1,22 @@
-@charset "UTF-8";
-//$lte7: false; 这里可以设置开关
-@import "mixin";
+@charset "UTF-8"; //$lte7: false; 这里可以设置开关
+@import "mixin"; //@mixin无参数调用
 
-//@mixin无参数调用
 #header {
     width: 100px;
     @include center-block;
 }
+
 .gallery {
     width: 600px;
     @include center-block;
 }
-
 //带条件的@mixin
+
 .inlin_eblock {
     @include inline-block;
 }
-
 //@mixin带参数，默认调用
+
 .f1 {
     @include float;
 }
@@ -25,13 +24,13 @@
 .f2 {
     @include float(right);
 }
-
 //@mixin多参数调用
+
 .disable {
     @include disable($bgColor:#e6e6e6, $textColor:#ababab);
 }
-
 //@mixin多属性调用
+
 .shadow {
     @include box-shadow(0 0 5px rgba(0,0,0,.3));
 }
@@ -39,7 +38,6 @@
 .shadow {
     @include box-shadow(0 0 5px rgba(0,0,0,.3), inset 0 0 3px rgba(255,255,255,.5));
 }
-
 //@content 嵌套调用
 @include header {
     width: 1000px;
@@ -49,16 +47,82 @@
         width: 200px;
     }
 }
-
 //@content 用途
-@include screen(960px,1200px){
-    body{
+//响应式布局的时候
+@include screen(960px,1200px) {
+    body {
         font-size: 14px;
     }
-};
-//不建议使用
-#header{
-    @include screen(780px, 1000px){
+}; //
+
+#header {
+    @include screen(780px, 1000px) {
         color: red;
+    }
+}
+//三角形
+
+.top {
+    @include triangle(top, 100px, red);
+}
+
+.left {
+    @include triangle(left, 10px, blue);
+}
+//css3前缀
+
+.css3prefix {
+    @include prefix(box-shadow, 1px 1px 0 red, webkit moz o ms);
+}
+//设置宽高为auto；
+
+.wh {
+    @include size;
+}
+
+.wh10 {
+    @include size(10, 20);
+}
+
+#header1 {
+    width: 1000px;
+    @extend %center-block;
+}
+
+.gallery1 {
+    width: 600px;
+    @extend %center-block;
+}
+
+.warp {
+    @extend %clearfix;
+}
+
+p {
+    color: darken(#800, 20%);
+    background-color: darken(#f00,70%);
+    height: if(unitless(20px), 1px, 2px);
+}
+
+div.content {
+    width: pxToEm(780);
+}
+
+#container {
+    width: get_width(12,false);    //960px
+}
+
+.col-four {
+    @extend %clearfix;
+
+    .col {
+        @include float;
+        margin: 0 $_gutter / 2;
+        width: get_width(3); //220px
+
+        h2 {
+            padding-left:10px;
+            width: get_width(3,true,10px); //210px
+        }
     }
 }

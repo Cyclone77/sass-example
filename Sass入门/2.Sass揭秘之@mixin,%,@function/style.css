@@ -1,3 +1,28 @@
+@charset "UTF-8";
+/**
+Trident内核：主要代表为IE浏览器
+Gecko内核：主要代表为Firefox
+Presto内核：主要代表为Opera
+Webkit内核：产要代表为Chrome和Safari
+
+Trident内核：前缀为-ms
+Gecko内核：前缀为-moz
+Presto内核：前缀为-o
+Webkit内核：前缀为-webkit
+**/
+#header1, .gallery1 {
+  margin-left: auto;
+  margin-right: auto; }
+
+.warp, .col-four {
+  *zoom: 1; }
+  .warp:after, .col-four:after, .warp:before, .col-four:before {
+    content: "";
+    display: table;
+    font: 0/0 a; }
+  .warp:after, .col-four:after {
+    clear: both; }
+
 #header {
   width: 100px;
   margin-left: auto;
@@ -48,5 +73,60 @@
 @media screen and (min-width: 780px) and (max-width: 1000px) {
   #header {
     color: red; } }
+
+.top {
+  content: "";
+  height: 0;
+  width: 0;
+  border-bottom: 100px solid red;
+  border-left: 100px dashed transparent;
+  border-right: 100px dashed transparent; }
+
+.left {
+  content: "";
+  height: 0;
+  width: 0;
+  border-right: 10px solid blue;
+  border-top: 10px dashed transparent;
+  border-bottom: 10px dashed transparent; }
+
+.css3prefix {
+  -webkit-box-shadow: 1px 1px 0 red;
+  -moz-box-shadow: 1px 1px 0 red;
+  -ms-box-shadow: 1px 1px 0 red; }
+
+.wh {
+  width: auto;
+  height: auto; }
+
+.wh10 {
+  width: 10px;
+  height: 20px; }
+
+#header1 {
+  width: 1000px; }
+
+.gallery1 {
+  width: 600px; }
+
+p {
+  color: #220000;
+  background-color: black;
+  height: 2px; }
+
+div.content {
+  width: 48.75em; }
+
+#container {
+  width: 960px; }
+
+.col-four .col {
+  float: left;
+  display: inline;
+  margin: 0 10px;
+  width: 220px; }
+  .col-four .col h2 {
+    padding-left: 10px;
+    width: 210px; }
 
 /*# sourceMappingURL=style.css.map */
