@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>清除浮动</title>
+    <style media="screen">
+        .nostyle {
+            padding: 10px 0 10px 10px;
+            background-color: #ccc;
+            border: 1px solid #bbb;
+        }
+
+        .nostyle:before {
+            content: "";
+            display: table;
+        }
+
+        .demo2 {
+            overflow: auto;
+        }
+
+        .demo3 {
+            display: inline-block;
+        }
+
+        li {
+            list-style: none;
+            float: left;
+            margin-right: 10px;
+        }
+
+        .clearfix:before,
+        .clearfix:after {
+            content: "";
+            display: table;
+        }
+
+        .clearfix:after {
+            clear: both;
+        }
+
+        .clearfix {
+            *zoom: 1;
+        }
+
+        p {
+            border: 1px solid;
+            height: 48px;
+        }
+        p:first-child {
+            display: block;
+        }
+
+        p:before,
+        p:after {
+            content: "";
+            display: table;
+        }
+
+        p:after {
+            clear: both;
+            overflow: hidden;
+        }
+    </style>
+</head>
+
+<body>
+
+    <ul class="nostyle demo2" style="margin-bottom: 20px;">
+        <li><img alt="img1" src="http://www.w3cplus.com/solution/clearfloat/images/img150.jpg"></li>
+        <li><img alt="img2" src="http://www.w3cplus.com/solution/clearfloat/images/img150.jpg"></li>
+        <li><img alt="img3" src="http://www.w3cplus.com/solution/clearfloat/images/img150.jpg"></li>
+    </ul>
+
+    <ul class="nostyle demo clearfix" style="margin-top: 30px;">
+        <li><img alt="img1" src="http://www.w3cplus.com/solution/clearfloat/images/img150.jpg"></li>
+        <li><img alt="img2" src="http://www.w3cplus.com/solution/clearfloat/images/img150.jpg"></li>
+        <li><img alt="img3" src="http://www.w3cplus.com/solution/clearfloat/images/img150.jpg"></li>
+    </ul>
+
+    <ul class="nostyle demo3">
+        <li><img alt="img1" src="http://www.w3cplus.com/solution/clearfloat/images/img150.jpg"></li>
+        <li><img alt="img2" src="http://www.w3cplus.com/solution/clearfloat/images/img150.jpg"></li>
+        <li><img alt="img3" src="http://www.w3cplus.com/solution/clearfloat/images/img150.jpg"></li>
+    </ul>
+    <div>
+        <p style="margin-bottom: 30px;">这个段落的下外边距被合并...</p>
+        <p style="margin-top: 20px;">...这个段落的上外边距被合并。</p>
+    </div>
+</body>
+
+</html>

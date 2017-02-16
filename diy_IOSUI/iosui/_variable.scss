@@ -1,0 +1,22 @@
+@charset "UTF-8"; //默认属性
+//字体
+$font-family-sans-serif: "Helvetica Neue", Helvetica, Arial, sans-serif !default;
+$font-family-base: $font-family-sans-serif !default;
+$font-size-base: 14px !default;
+$line-height-base: 1.428571429 !default;
+$border-radius-base: 4px !default;
+/**
+    组件
+    1. 按钮
+**/
+//1.按钮
+$btn-font-weight: normal !default;
+
+$btn-border-radius-base: $border-radius-base !default;
+//default样式
+$btn-default-color: #333 !default;
+$btn-default-bg: #fff !default;
+$btn-default-border: #ccc !default;
+
+$padding-base-vertical: 6px !default;
+$padding-base-horizontal: 12px !default;
