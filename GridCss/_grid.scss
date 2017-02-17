@@ -1,0 +1,46 @@
+@charset "UTF-8";
+$grid-columns: 12 !default;
+@mixin clearfix {
+    &:after,
+    &:before {
+        content: "";
+        display: table;
+    }
+
+    &:after {
+        clear: both;
+    }
+}
+@mixin make-row {
+     @include clearfix;
+}
+
+.row {
+    @include make-row;
+}
+@mixin float-grid-columns($class, $i: 1, $list: ()) {
+     @for $i from 1 through $grid-columns{
+        $list: append($list, ".col-#{$class}-#{$i}", comma);
+    }
+
+    #{$list} {
+        float: left;
+    }
+}
+@mixin calc-grid-column($grid, $class) {
+     @if $grid > 0{
+        .col-#{$class}-#{$grid} {
+            width: percentage(($grid / $grid-columns));
+        }
+    }
+}
+@mixin loop-grid-columns($columns, $class) {
+     @for $i from 0 through $columns{
+        @include calc-grid-column($i, $class);
+    }
+}
+@mixin make-grid($class) {
+    @include float-grid-columns($class);
+    @include loop-grid-columns($grid-columns, $class);
+}
+@include make-grid(md);

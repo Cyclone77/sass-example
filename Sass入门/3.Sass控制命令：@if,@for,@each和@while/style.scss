@@ -1,0 +1,16 @@
+$class-slug: for !default;
+@for $i from (1 + 1) through 4 {
+    .#{$class-slug}-#{$i} {
+        width: 60px + $i;
+    }
+}
+$class: md;
+$i: 1,;
+$list: ".col-#{$class}-#{$i}";
+@for $i from 1+1 through 12 {
+    $list: "#{$list}, .col-#{$class}-#{$i}";
+}
+
+#{$list} {
+    float: left;
+}

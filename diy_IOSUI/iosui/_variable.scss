@@ -5,18 +5,27 @@ $font-family-base: $font-family-sans-serif !default;
 $font-size-base: 14px !default;
 $line-height-base: 1.428571429 !default;
 $border-radius-base: 4px !default;
+
+$brand-primary:         darken(#428bca, 6.5%) !default; // #337ab7
+$brand-success:         #5cb85c !default;
+$brand-info:            #5bc0de !default;
+$brand-warning:         #f0ad4e !default;
+$brand-danger:          #d9534f !default;
 /**
     组件
     1. 按钮
 **/
 //1.按钮
 $btn-font-weight: normal !default;
+$btn-border-radius-base: $border-radius-base !default; //default样式
 
-$btn-border-radius-base: $border-radius-base !default;
-//default样式
 $btn-default-color: #333 !default;
 $btn-default-bg: #fff !default;
 $btn-default-border: #ccc !default;
+
+$btn-primary-color: #fff !default;
+$btn-primary-bg: $brand-primary !default;
+$btn-primary-border: darken($btn-primary-bg, 5%) !default;
 
 $padding-base-vertical: 6px !default;
 $padding-base-horizontal: 12px !default;
