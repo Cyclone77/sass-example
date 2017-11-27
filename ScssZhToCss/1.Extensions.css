@@ -1,0 +1,27 @@
+#main {
+  width: 97%; }
+  #main div,
+  #main p {
+    font-size: 2em; }
+    #main div a,
+    #main p a {
+      font-weight: bold; }
+
+a {
+  font-weight: bold;
+  text-decoration: none; }
+  a span {
+    display: inline-block; }
+    a span-link:em {
+      font-size: 12px; }
+  a:hover {
+    text-decoration: underline; }
+  .firefox a {
+    font-weight: normal; }
+
+.funky {
+  font: 20px/24px;
+    font-family: fantasy;
+    font-weight: bold; }
+
+/*# sourceMappingURL=1.Extensions.css.map */
