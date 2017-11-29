@@ -1,0 +1,46 @@
+@charset "UTF-8";
+$name: foo;
+$attr: border;
+
+p.#{$name} {
+    #{$attr}-color: blue;
+}
+
+p {
+    $font-size: 12px;
+    $line-height: 30px;
+    font: #{$font-size}/#{$line-height};
+}
+
+.bip.qux,
+.foo.bar .baz.bang {
+    $selector: &;
+
+    #{$selector} .p {
+        font-size: 14px;
+    }
+}
+@mixin does-parent-exist {
+    @if & {
+        &:hover {
+            color: blue;
+        }
+    } @else {
+        a {
+            color: red;
+        }
+    }
+}
+
+p {
+    @include does-parent-exist();
+}
+$content: "First content";
+$content: "Second content?" !default;
+$new_content: "First time reference" !default;
+$new_content: "Second time reference";
+
+#main {
+    content: $content;
+    new-content: $new_content;
+}

@@ -1,0 +1,19 @@
+p.foo {
+  border-color: blue; }
+
+p {
+  font: 12px/30px; }
+
+.bip.qux .bip.qux, .bip.qux .foo.bar .baz.bang .p,
+.foo.bar .baz.bang .bip.qux,
+.foo.bar .baz.bang .foo.bar .baz.bang .p {
+  font-size: 14px; }
+
+p:hover {
+  color: blue; }
+
+#main {
+  content: "First content";
+  new-content: "Second time reference"; }
+
+/*# sourceMappingURL=3.Special.css.map */

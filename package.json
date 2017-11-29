@@ -1,0 +1,21 @@
+{
+  "name": "sass-example",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "dependencies": {},
+  "devDependencies": {},
+  "scripts": {
+    "scss": "sass --watch ScssZh:scsszhtocss"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Cyclone77/sass-example.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Cyclone77/sass-example/issues"
+  },
+  "homepage": "https://github.com/Cyclone77/sass-example#readme"
+}

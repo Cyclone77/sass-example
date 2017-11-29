@@ -1,0 +1,74 @@
+@charset "UTF-8";
+$width: 5em; //全局变量
+#main {
+    $height: 5em !global; //带有 !global 的全局变量
+    $fontsize: 14px;
+    width: $width;
+    height: $height;
+    font-size: $fontsize !important;
+}
+
+#sidebar {
+    width: $width;
+    height: $height; // font-size: $fontsize; 这里编译提示 $fontsize 找不到
+}
+
+$content: "这里是自定义内容！";
+$bgcolor: #808080; //不带引号的字符串
+.footer:after {
+    content: "#{$content} 每个after设置的固定内容。";
+    background-color: $bgcolor;
+}
+
+$list: (10px 20px) 30px,
+1;
+.title {
+    height: nth($list, 1);
+    margin: $list;
+}
+
+p {
+    font: 10px/8px; // 原生的CSS，不作为除法
+    $width: 1000px;
+    width: $width/2; // 使用了变量, 作为除法
+    width: round(1.5)/2; // 使用了函数, 作为除法
+    height: (500px/2); // 使用了括号, 作为除法
+    margin-left: 5px + 8px/2px; // 使用了 +, 作为除法
+    font: (italic bold 10px/8px); // 在一个列表（list）中，括号可以被忽略。
+}
+
+$margin: 2px (-3px) 4px -5px;
+$height: 3px;
+.content {
+    width: 10px - 3px; //传统的减法规则，前后都带空格。
+    margin: $margin; //list用括号也可以表示负数，当然用前面带空格后面不带空格也可以表示。
+    padding: -2px -3px; //减号前面有空格，后面没有空格视为负数。
+    z-index: 99- 66; //2个数字之间不论是否带空格，都表明是减法。
+    height: 2 -$height; //变量参与视为减法运算。
+}
+
+p {
+    color: #010203 + #040506;
+}
+
+p {
+    cursor: e + -resize;
+}
+
+p:before {
+    content: "Foo " + Bar;
+    font-family: sans- + "serif";
+}
+
+p:after {
+    content: "I ate #{5 + 10} pies!";
+}
+
+$value: null;
+p:before {
+    content: "I ate #{$value} pies!";
+}
+
+p {
+    width: 1em + (2em * 3);
+}

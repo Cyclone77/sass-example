@@ -1,0 +1,53 @@
+@charset "UTF-8";
+#main {
+  width: 5em;
+  height: 5em;
+  font-size: 14px !important; }
+
+#sidebar {
+  width: 5em;
+  height: 5em; }
+
+.footer:after {
+  content: "这里是自定义内容！ 每个after设置的固定内容。";
+  background-color: #808080; }
+
+.title {
+  height: 10px 20px 30px;
+  margin: 10px 20px 30px, 1; }
+
+p {
+  font: 10px/8px;
+  width: 500px;
+  width: 1;
+  height: 250px;
+  margin-left: 9px;
+  font: italic bold 10px/8px; }
+
+.content {
+  width: 7px;
+  margin: 2px -3px 4px -5px;
+  padding: -2px -3px;
+  z-index: 33;
+  height: -1px; }
+
+p {
+  color: #050709; }
+
+p {
+  cursor: e-resize; }
+
+p:before {
+  content: "Foo Bar";
+  font-family: sans-serif; }
+
+p:after {
+  content: "I ate 15 pies!"; }
+
+p:before {
+  content: "I ate  pies!"; }
+
+p {
+  width: 7em; }
+
+/*# sourceMappingURL=2.Variables.css.map */
